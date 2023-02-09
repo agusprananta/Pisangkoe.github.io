@@ -1,0 +1,489 @@
+:root {
+	--primary: #dfb85d;
+	--bg: #fbcb06;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'poppins', sans-serif;
+	background-color: var(--bg);
+	color: #1d1d1d;
+}
+
+/*NAVBAR*/
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.4rem 7%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99999999;
+	background-color: #fdcc06;
+}
+
+.navbar .navbar-logo img{
+	height: 50px;
+	width: 100px;
+}
+
+.navbar .navbar-nav a {
+	color: #000;
+	display: inline-block;
+	font-size: 1.8rem;
+	margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+	color: #d79b33;
+}
+
+.navbar .navbar-nav a::after {
+	content: '';
+	display: block;
+	padding-bottom: 0.5rem;
+	border-bottom: 0.1rem solid #d79b33;
+	transform: scaleX(0);
+	transition: 0.2s liniear;
+}
+
+.navbar .navbar-nav a:hover::after {
+	transform: scaleX(0.5);
+}
+
+
+.navbar .navbar-extra a {
+	color: #000;
+	margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+	color: #d79b33;
+	transition: 0.2s liniear;
+}
+
+
+#hamburger-menu{
+	display: none;
+}
+
+
+
+/*hero section*/
+.hero {
+	min-height: 130vh;
+	display: flex;
+	align-items: center;
+	background-image: url('banana.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+ 
+.hero .content {
+	padding: 1.4rem 7%;
+	max-width: 60%;
+	opacity: 0;
+	transform: translate(-50px, 0);
+	transition: .5s;
+}
+
+.hero .content.cMuncul{
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+
+.hero .content h1 {
+	font-size: 5em;
+	text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+	line-height: 1.2;
+}
+
+.hero .content p {
+	font-size: 2rem;
+	margin-top: 1rem;
+	line-height: 1.4;
+	font-weight: 300;
+	text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.3);
+	/*mix-blend-mode: difference;*/
+
+}
+
+.hero .content .cta {
+	margin-top: 1rem;
+	display: inline-block;
+	padding: 1rem 3rem;
+	font-size: 1.4rem;
+	color: #000;
+	background-color: #d79b33;
+	border-radius: 0.5rem;
+	box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+	transition: transform .3s;
+}
+.hero .content .cta:hover {
+	background-color: #dfb85d;
+	transform: scale(1.2);
+
+}
+
+/*about section*/
+.about, .menu, .kontak{
+	padding: 7rem 7% 1.4rem;
+}
+
+.about h2, .kontak h2{
+	text-align: center;
+	font-size: 2.6rem;
+	margin-bottom: 3rem;
+}
+
+/*tentang kami*/
+.about .row {
+	display: flex;
+}
+
+.about-img, .aContent {
+	opacity: 0;
+	transform: translate(-50px, 0);
+	transition: .5s;
+}
+
+.aContent {
+	transform: translate(50px, 0);
+}
+
+.about-img.aMuncul, .aContent.aMuncul{
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+.about .row .about-img {
+	flex: 1 1 45rem;
+}
+
+.about .row .about-img img{
+	width: 100%;
+}
+
+.about .row .aContent {
+	flex: 1 1 35rem;
+	padding: 0 1rem;
+}
+
+.about .row .aContent h3 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.about .row .aContent p {
+	margin-bottom: 0.8rem;
+	font-size: 2rem;
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+
+/*Menu Kami*/
+.menu h2, .kontak h2{
+	text-align: center;
+	font-size: 2.6rem;
+	margin-bottom: 1rem;
+}
+
+.menu p, .kontak p {
+	text-align: center;
+	max-width: 30rem;
+	margin: auto;
+	font-weight: 300;
+	line-height: 1.6;
+	font-size: 1.5rem;
+}
+
+.menu .row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 5rem;
+	justify-content: center;
+}
+
+.menu .row .menu-card{
+	text-align: center;
+	padding-bottom: 2rem;
+	opacity: 0;
+	transform: translate(0, -40px);
+	transition: .7s;
+}
+
+
+.menu .row .menu-card.muncul{
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+.menu .row .menu-card img{
+	border-radius: 3rem;
+	height: 200px;
+	width: 200px;
+	margin-right: 5rem;
+	box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+	transition: transform .3s;
+}
+
+.menu .row .menu-card img:hover {
+	transform: scale(1.1);
+}
+
+.menu .row .menu-card .menu-title{
+	margin: 1rem auto 0.5rem;
+}
+
+
+/*Kontak Kami*/
+.kontak .row {
+	display: flex;
+	margin-top: 2rem;
+	background-color: #f0c217;
+	opacity: 0;
+}
+
+.kontak .row.kMuncul{
+	opacity: 1;
+	transition: 1s;
+} 
+
+.kontak .row .map {
+	flex: 1 1 45rem;
+	width: 100%;
+	object-fit: cover;
+}
+
+.kontak .row form{
+	flex: 1 1 45rem;
+	padding: 5rem 2rem;
+	text-align: center;
+}
+
+.kontak .row form .input-group {
+	display: flex;
+	align-items: center;
+	margin-top: 2rem;
+	background-color: #000;
+	border: 1px solid #eee;
+	padding-left: 2rem;
+}
+
+.kontak .row form .input-group input{
+	width: 100%;
+	padding: 2rem;
+	font-size: 1.7rem;
+	background: none;
+	color: #fff;
+}
+
+.kontak .row form .btn {
+	margin-top: 3rem;
+	display: inline-block;
+	padding: 1rem 3rem;
+	font-size: 1.7rem;
+	color: #000;
+	background-color: #f0c217;
+	box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+	cursor: pointer;
+	border-radius: 0.5rem;
+	transition: transform .3s;
+}
+
+.kontak .row form .btn:hover{
+	transform: scale(1.2);
+	background-color: #e2ba65;
+}
+
+
+/*Footer*/
+footer {
+	background-color: #f0c217;
+	text-align: center;
+	padding: 1rem 0 3rem;
+	margin-top: 3rem;
+}
+
+footer .social{
+	padding: 1rem 0;
+}
+
+footer .social a{
+	color: #fff;
+	margin: 1rem;
+}
+
+footer .social a:hover {
+	color: #000;
+}
+
+footer .link{
+	margin-bottom: 1.4rem;
+}
+
+footer .link a{
+	color: #ffff;
+	padding: 0.7rem 1rem;
+}
+
+footer .link a:hover{
+	color: #000;
+}
+
+footer .credit {
+	font-size: 0.8rem;
+}
+
+footer .credit p{
+	font-weight: 300;
+}
+
+footer .credit a{
+	color: #000;
+	font-weight: 700;
+}
+
+
+
+
+
+/*Media laptop*/
+@media (max-width: 1366px) {
+	html {
+		font-size: 50%;
+	}
+}
+
+/*Media Tablet*/
+@media (max-width: 768px) {
+	html {
+		font-size: 62.5%;
+	}
+
+	#hamburger-menu {
+		display: inline-block;
+	}
+
+	.navbar .navbar-nav {
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		background-color: transparent;
+		width: 20rem;
+		height: 100vh;
+		transition: 0.4s;
+	}
+
+	.navbar .navbar-nav.active {
+		right: 0;
+	}
+
+	.navbar .navbar-nav a {
+		color: #000;
+		display: block;
+		margin: 1.5rem;
+		padding: 0.5rem;
+		font-size: 2rem;
+	}
+
+	.navbar .navbar-nav a::after{
+		transform-origin: 0 0;
+	}
+
+	.navbar .navbar-nav a:hover::after{
+		transform: scaleX(0.3);
+	}
+
+	.hero .content {
+		font-size: 70%;
+	}
+
+	.about .row {
+		flex-wrap: wrap;
+	}
+
+	.about .row .about-img img {
+		height: 24rem;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.about .row .content {
+		padding: 0;
+	}
+
+	.about .row .content h3 {
+		margin-top: 1rem;
+		font-size: 2rem;
+	}
+
+	.about .row .content p {
+		font-size: 1.5rem;
+		margin-top: 1rem;
+	}
+
+	.menu p {
+		font-size: 1rem;
+	}
+
+	.kontak .row {
+		flex-wrap: wrap;
+	}
+
+	.kontak .row .map{
+		height: 30rem;
+	}
+
+	.kontak .row form {
+		padding-top: 0;
+	}
+}
+
+/*media handphone*/
+@media (max-width: 500px) {
+	html {
+		font-size: 55%;
+	}
+
+	.about .row {
+		flex-wrap: wrap;
+	}
+
+	.about .row .about-img img {
+		height: 24rem;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.about .row .content {
+		padding: 0;
+	}
+
+	.about .row .content h3 {
+		margin-top: 1rem;
+		font-size: 2rem;
+	}
+
+	.about .row .content p {
+		font-size: 1.6rem;
+		margin-top: 1rem;
+	}
+}
